@@ -48,10 +48,10 @@ function isPasswordValid(password: string, breakdown?: boolean, strict?: boolean
   let cap = false, // Has uppercase characters
     low = false, // Has lowercase characters
     num = false, // At least one number
-    min = false, // Eight characters, or fifteen in strict mode.
+    min = false, // Seven characters, or ten in strict mode.
     admin_min = false;
-  if (password.length >= 7 && (!strict || password.length > 14)) min = true;
-  if (strict && password.length > 14) admin_min = true;
+  if (password.length >= 7 && (!strict || password.length >= 10)) min = true;
+  if (strict && password.length >= 10) admin_min = true;
   if (password.match(/\d/)) num = true;
   if (password.match(/[a-z]/)) low = true;
   if (password.match(/[A-Z]/)) cap = true;
